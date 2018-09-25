@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KotlinApp</string>
+
+    <!-- Login Texts -->
+    <string name="username_hint">Usuario</string>
+    <string name="password_hint">Password</string>
+</resources>
