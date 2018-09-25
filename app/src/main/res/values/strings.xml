@@ -4,4 +4,5 @@
     <!-- Login Texts -->
     <string name="username_hint">Usuario</string>
     <string name="password_hint">Password</string>
+    <string name="login_button">Iniciar Sesión</string>
 </resources>
