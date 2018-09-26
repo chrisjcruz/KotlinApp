@@ -1,7 +1,7 @@
-package com.example.cc_e90045.kotlinapp.activities
+package com.example.chris.kotlinapp.activities
 
 import android.os.Bundle
-import com.example.cc_e90045.kotlinapp.R
+import com.example.chris.kotlinapp.R
 
 class MainActivity : BaseActivity() {
 

@@ -1,4 +1,4 @@
-package com.example.cc_e90045.kotlinapp
+package com.example.chris.kotlinapp
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

@@ -1,4 +1,4 @@
-package com.example.cc_e90045.kotlinapp.activities
+package com.example.chris.kotlinapp.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
