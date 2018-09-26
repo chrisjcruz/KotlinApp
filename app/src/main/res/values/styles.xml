@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppThemeBase" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -10,9 +10,12 @@
         <item name="android:buttonStyle">@style/AppTheme.Button</item>
         <item name="android:editTextStyle">@style/AppTheme.EditText</item>
     </style>
+
+    <style name="AppTheme" parent="AppThemeBase"/>
     
     <style name="AppTheme.Button" parent="Base.Widget.AppCompat.Button">
         <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">#627cc167</item>
         <item name="android:textAllCaps">false</item>
     </style>
 
@@ -21,16 +24,32 @@
     </style>
 
     <!-- LoginActivity Theme -->
-    <style name="LoginActivityTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="LoginActivityThemeBase" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="buttonStyle">@style/LoginActivityTheme.Button</item>
+        <item name="android:buttonStyle">@style/LoginActivityTheme.Button</item>
+        <item name="editTextStyle">@style/LoginActivityTheme.EditText</item>
         <item name="android:editTextStyle">@style/LoginActivityTheme.EditText</item>
     </style>
 
-    <style name="LoginActivityTheme.EditText" parent="AppTheme.EditText">
+    <style name="LoginActivityTheme" parent="LoginActivityThemeBase"/>
 
+    <style name="LoginActivityTheme.Button" parent="Base.Widget.AppCompat.Button">
+        <item name="android:background">@color/loginButtonColor</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="LoginActivityTheme.EditText" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/edit_text_background_green</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:fontFamily">sans-serif</item>
     </style>
 
     <style name="LoginActivityTheme.BorderlessButton" parent="Base.Widget.AppCompat.Button.Borderless.Colored">
-        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textColor">@color/loginButtonColor</item>
     </style>
 
 </resources>

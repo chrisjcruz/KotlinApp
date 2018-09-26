@@ -47,6 +47,28 @@
             android:text="@string/login_button"
             app:layout_constraintTop_toBottomOf="@id/passwordEditText"/>
 
+        <Button
+            style="@style/LoginActivityTheme.BorderlessButton"
+            android:id="@+id/registerButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:text="@string/register_button"
+            app:layout_constraintTop_toBottomOf="@+id/loginButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <Button
+            style="@style/LoginActivityTheme.BorderlessButton"
+            android:id="@+id/recoverPasswordButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            android:text="@string/recover_password_button"
+            app:layout_constraintTop_toBottomOf="@+id/registerButton"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
     </android.support.constraint.ConstraintLayout>
 
 </ScrollView>
