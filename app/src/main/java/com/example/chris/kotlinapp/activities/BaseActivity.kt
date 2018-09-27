@@ -3,12 +3,10 @@ package com.example.chris.kotlinapp.activities
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
+import com.example.chris.validations.ErrorInterface
+import com.example.chris.validations.helpers.ErrorHelper
 
-abstract class BaseActivity : AppCompatActivity(){
+abstract class BaseActivity : AppCompatActivity(), ErrorInterface{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,14 +22,23 @@ abstract class BaseActivity : AppCompatActivity(){
         return super.onOptionsItemSelected(item);
     }
 
-    private fun setEnabled(parent: ViewGroup,enabled: Boolean){
-        for (i in 0..parent.childCount - 1 ){
-            val child: View = parent.getChildAt(i)
-            if (child is ViewGroup){
-                setEnabled(child, enabled)
-            }else if (child is TextView || child is Button){
-                child.setEnabled(enabled)
-            }
-        }
+    override fun setEnabled(enabled: Boolean) {
+        ErrorHelper.setEnabled(findViewById(android.R.id.content), enabled)
+    }
+
+    override fun validateErrors() {
+        clearErrors()
+    }
+
+    override fun clearErrors() {
+        ErrorHelper.clearErrors(findViewById(android.R.id.content))
+    }
+
+    override fun focusError() {
+        ErrorHelper.focusError(findViewById(android.R.id.content))
+    }
+
+    override fun hasError(): Boolean {
+        return ErrorHelper.findError(findViewById(android.R.id.content))
     }
 }
