@@ -1,17 +1,21 @@
-package com.example.chris.kotlinapp.activities
+package com.example.login.activities
 
 import android.content.Intent
 import android.os.Bundle
-import com.example.chris.kotlinapp.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 import android.support.v7.app.AlertDialog
-import com.example.chris.validations.validators.StringValidations
+import com.example.chris.validations.activities.BaseActivity
+import com.example.login.Application
+import com.example.login.R
+import com.example.login.R.id.*
 
 //import com.example.chris.kotlinapp.models.User
 
 
 class LoginActivity : BaseActivity() {
+
+    private var application: Application? = null
 
     private var mAuth: FirebaseAuth? = null
 
@@ -24,6 +28,13 @@ class LoginActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        try {
+            application = applicationContext as Application
+        } catch (e: ClassCastException) {
+            throw ClassCastException("Application must implement Application")
+        }
+
+
         mAuth = FirebaseAuth.getInstance()
 
         loginButton.setOnClickListener() { _ ->
@@ -34,9 +45,7 @@ class LoginActivity : BaseActivity() {
                             if (task.isSuccessful) {
                                 // Sign in success, update UI with the signed-in user's information
                                 val user = mAuth?.currentUser
-                                val intent: Intent = Intent(this, MainActivity::class.java)
-//                            intent.putExtra("user", User(user?.displayName, user?.email))
-                                startActivity(intent)
+                                application?.onLoginSuccess()
                                 finish()
                             } else {
                                 // If sign in fails, display a message to the user.

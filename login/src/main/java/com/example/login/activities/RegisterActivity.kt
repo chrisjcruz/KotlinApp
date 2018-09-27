@@ -1,8 +1,8 @@
-package com.example.chris.kotlinapp.activities
+package com.example.login.activities
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.chris.kotlinapp.R
+import com.example.login.R
 
 class RegisterActivity : AppCompatActivity() {
 

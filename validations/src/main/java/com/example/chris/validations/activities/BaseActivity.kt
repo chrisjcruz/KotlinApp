@@ -1,4 +1,4 @@
-package com.example.chris.kotlinapp.activities
+package com.example.chris.validations.activities
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
