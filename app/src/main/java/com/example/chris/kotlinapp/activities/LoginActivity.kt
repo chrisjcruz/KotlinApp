@@ -8,7 +8,8 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 import android.widget.Toast
 import android.support.v7.app.AlertDialog
-import com.example.chris.kotlinapp.models.User
+
+//import com.example.chris.kotlinapp.models.User
 
 
 class LoginActivity : AppCompatActivity() {
@@ -26,14 +27,14 @@ class LoginActivity : AppCompatActivity() {
 
         mAuth = FirebaseAuth.getInstance()
 
-        loginButton.setOnClickListener({_ ->
+        loginButton.setOnClickListener() { _ ->
             mAuth?.signInWithEmailAndPassword(usernameEditText.text.toString(), passwordEditText.text.toString())
                     ?.addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             val user = mAuth?.currentUser
-                            val intent : Intent = Intent(this, MainActivity::class.java)
-                            intent.putExtra("user", User(user?.displayName, user?.email))
+                            val intent: Intent = Intent(this, MainActivity::class.java)
+//                            intent.putExtra("user", User(user?.displayName, user?.email))
                             startActivity(intent)
                             finish()
                         } else {
@@ -41,10 +42,10 @@ class LoginActivity : AppCompatActivity() {
                             showAlertDialog("Authentication failed")
                         }
                     }
-        })
+        }
     }
 
-    private fun showAlertDialog(message: String){
+    private fun showAlertDialog(message: String) {
         AlertDialog.Builder(this)
                 .setMessage(message)
                 .setCancelable(false)
