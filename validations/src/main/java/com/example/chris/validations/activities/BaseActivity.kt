@@ -1,6 +1,7 @@
 package com.example.chris.validations.activities
 
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
 import com.example.chris.validations.ErrorInterface
@@ -13,6 +14,8 @@ abstract class BaseActivity : AppCompatActivity(), ErrorInterface{
         if(supportActionBar != null)
             supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
+
+    abstract fun showAlertDialog(message: String)
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         if (item!!.itemId == android.R.id.home){

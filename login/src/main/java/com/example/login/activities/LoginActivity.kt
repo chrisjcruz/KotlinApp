@@ -8,9 +8,8 @@ import android.support.v7.app.AlertDialog
 import com.example.chris.validations.activities.BaseActivity
 import com.example.login.Application
 import com.example.login.R
-import com.example.login.R.id.*
 
-//import com.example.chris.kotlinapp.models.User
+//import com.chris.models.User
 
 
 class LoginActivity : BaseActivity() {
@@ -34,7 +33,6 @@ class LoginActivity : BaseActivity() {
             throw ClassCastException("Application must implement Application")
         }
 
-
         mAuth = FirebaseAuth.getInstance()
 
         loginButton.setOnClickListener() { _ ->
@@ -54,9 +52,14 @@ class LoginActivity : BaseActivity() {
                         }
             }
         }
+
+        registerButton.setOnClickListener() { _ ->
+            startActivity(Intent(applicationContext, RegisterActivity::class.java))
+
+        }
     }
 
-    private fun showAlertDialog(message: String) {
+    override fun showAlertDialog(message: String) {
         AlertDialog.Builder(this)
                 .setMessage(message)
                 .setCancelable(false)
