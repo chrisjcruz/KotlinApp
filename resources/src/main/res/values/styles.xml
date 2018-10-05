@@ -42,7 +42,7 @@
     </style>
 
     <style name="LoginActivityTheme.EditText" parent="Base.Widget.AppCompat.EditText">
-        <!--<item name="android:background">@drawable/edit_text_background_green</item>-->
+        <item name="android:background">@drawable/edit_text_background_green</item>
         <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:textColorHint">@color/colorPrimary</item>
         <item name="android:layout_marginTop">10dp</item>

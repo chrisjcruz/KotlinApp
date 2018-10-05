@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#50964d</color>
-    <color name="colorPrimaryDark">#1f3b1e</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimaryDark">#396c37</color>
+    <color name="colorAccent">#498947</color>
 
     <color name="loginButtonColor">#50964d</color>
 </resources>

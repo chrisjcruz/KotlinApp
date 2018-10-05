@@ -21,7 +21,7 @@ class RegisterActivity : BaseActivity() {
         setContentView(R.layout.activity_register)
 
         try {
-            application = applicationContext as Application
+            application = applicationContext as? Application
         } catch (e: ClassCastException) {
             throw ClassCastException("Application must implement Application")
         }

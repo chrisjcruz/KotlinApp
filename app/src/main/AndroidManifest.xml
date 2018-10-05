@@ -9,19 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.MainActivity" />
         <activity
-            android:name="com.example.login.activities.LoginActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/LoginActivityTheme"
-            android:windowSoftInputMode="adjustResize|stateAlwaysHidden">
+            android:name="com.example.login.activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.login.activities.RegisterActivity"
+        <activity android:name=".activities.MainActivity"
             android:screenOrientation="portrait"/>
     </application>
 

@@ -9,7 +9,7 @@ import com.example.chris.validations.activities.BaseActivity
 import com.example.login.Application
 import com.example.login.R
 
-//import com.chris.models.User
+import com.chris.models.User
 
 
 class LoginActivity : BaseActivity() {
@@ -28,7 +28,7 @@ class LoginActivity : BaseActivity() {
         setContentView(R.layout.activity_login)
 
         try {
-            application = applicationContext as Application
+            application = applicationContext as? Application
         } catch (e: ClassCastException) {
             throw ClassCastException("Application must implement Application")
         }
